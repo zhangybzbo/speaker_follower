@@ -167,8 +167,8 @@ def eval_seq2seq():
     ''' Eval sequence to sequence models on val splits (iteration selected from
     training error) '''
     outfiles = [
-        train.RESULT_DIR + 'seq2seq_teacher_imagenet_%s_iter_5000.json',
-        train.RESULT_DIR + 'seq2seq_sample_imagenet_%s_iter_20000.json'
+        # train.RESULT_DIR + 'seq2seq_teacher_imagenet_%s_iter_5000.json',
+        train.RESULT_DIR + 'follower_sample_imagenet_mean_pooled_%s_iter_20000.json'
     ]
     for outfile in outfiles:
         for split in ['val_seen', 'val_unseen']:
@@ -181,4 +181,4 @@ def eval_seq2seq():
 if __name__ == '__main__':
     from train import make_arg_parser
     utils.run(make_arg_parser(), eval_simple_agents)
-    # eval_seq2seq()
+    eval_seq2seq()
